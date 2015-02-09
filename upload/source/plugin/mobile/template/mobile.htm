@@ -1,0 +1,40 @@
+<!--{subtemplate common/header}-->
+<link rel="stylesheet" type="text/css" href="source/plugin/mobile/template/style.css" />
+<!--{if $_G['adminid'] == 1}-->
+<script type="text/javascript">
+        function hiddentips() {
+                setcookie("mobiletips", "1");
+                display('admintips');
+        }
+</script>
+<!--{/if}-->
+<div id="ct" class="wp cl ptw pbw">
+<!--{if $_G['adminid'] == 1 && !$_G[cookie][mobiletips]}-->
+  <div class="wrap">
+        <div id="admintips" class="tips"><span class="y"><a href="javascript:hiddentips();" class="close">{lang close}</a></span>قم بتعديل الصورة wrapbg.jpg بما يناسبك</div>
+    <!--{/if}-->
+        <div class="content">
+
+                <div class="inner cl">
+                        <div class="intro z">
+                                <h2><img src="./source/plugin/mobile/template/image/title_intro.jpg" alt="{lang mobile:discuzmobile_alt}"></h2>
+                                <dl>
+                                        <dt>كل ما عليك فعله هو</dt>
+                                        <dd>وضع رابط المنتدى في متصفح جوالك</dd>
+                                        <dd>وسيفتح معك ستايل الجوال الخفيف ليسهل عليك التصفح</dd>
+
+                                </dl>
+                        </div>
+                        <div class="code y">
+                                <dl>
+                                        <dt class="shoot">قم بإلتقاط صورة QR لتفتح المنتدى مباشرة:</dt>
+                                        <dd class="code_img"><img src="data/cache/mobile_siteqrcode.png" alt="{lang mobile:qr}"/></dd>
+                                        <dt>رابط المنتدى:</dt>
+                                        <dd class="url"><a href="$_G['siteurl']" target="_blank">{$_G['siteurl']}</a></dd>
+                                </dl>
+                        </div>
+                </div>
+        </div>
+</div>
+</div>
+<!--{subtemplate common/footer}-->
