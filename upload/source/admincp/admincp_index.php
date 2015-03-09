@@ -219,7 +219,7 @@ showtablerow('', array('class="vtop td24 lineheight"', 'class="lineheight smallf
 ));
 showtablerow('', array('class="vtop td24 lineheight"', 'class="lineheight smallfont"'), array(
 	cplang('home_discuzar_lastversion'),
-	'آخر إصدار عربي متوفر للتحميل من موقع الدعم العربي هو #<iframe src="http://www.ar-discuz.net/last-x3-1.php" width="30" height="20" frameborder="0">
+	'آخر إصدار عربي متوفر للتحميل من موقع الدعم العربي هو #<iframe src="http://www.ar-discuz.net/last-ver.php" width="30" height="20" frameborder="0">
 </iframe> '
 ));
 showtablerow('', array('class="vtop td24 lineheight"', 'class="lineheight smallfont"'), array(
@@ -270,7 +270,7 @@ showtablefooter();
 showtableheader('home_dev', 'fixpadding');
 showtablerow('', array('class="vtop td24 lineheight"'), array(
 	cplang('home_dev_copyright'),
-	'<span class="bold"><a href="http://www.comsenz.com" class="lightlink2" target="_blank">&#x5317;&#x4EAC;&#x5EB7;&#x76DB;&#x65B0;&#x521B;&#x79D1;&#x6280;&#x6709;&#x9650;&#x8D23;&#x4EFB;&#x516C;&#x53F8;</a></span>'
+	'<span class="bold"><a href="http://www.comsenz.com" class="lightlink2" target="_blank">Comsenz Inc</a></span>'
 ));
 showtablerow('', array('class="vtop td24 lineheight"', 'class="lineheight smallfont team"'), array(
 	cplang('home_dev_manager'),
@@ -327,12 +327,12 @@ showtablerow('', array('class="vtop td24 lineheight"', 'class="lineheight"'), ar
 		<a href="http://idc.comsenz.com" class="lightlink2" target="_blank">استضافة المواقع</a>,
 		<a href="http://www.comsenz.com/purchase/discuzx" class="lightlink2" target="_blank">شراء ترخيص</a>,
 		<a href="http://www.discuz.com/" class="lightlink2" target="_blank">منتج ديسكاز</a>,
-		<a href="http://www.comsenz.com/downloads/styles/discuz" class="lightlink2" target="_blank">إستيلات صينيه</a>,
+		<a href="http://www.comsenz.com/downloads/styles/discuz" class="lightlink2" target="_blank">ستايلات صينيه</a>,
 		<a href="http://www.comsenz.com/downloads/plugins/discuz" class="lightlink2" target="_blank"> هاكات صينيه</a>,
 		<a href="http://faq.comsenz.com" class="lightlink2" target="_blank">سؤال وجواب</a>,
 		<a href="http://www.discuz.net/" class="lightlink2" target="_blank">الدعم الصيني</a>,
 		<a href="http://www.ar-discuz.net/" class="lightlink2" target="_blank">الدعم العربى</a>,
-		<a href="http://ar-discuz.net/forum-36-1.html" class="lightlink2" target="_blank">إستيلات ديسكاز</a>,
+		<a href="http://ar-discuz.net/forum-36-1.html" class="lightlink2" target="_blank">ستايلات ديسكاز</a>,
 		<a href="http://ar-discuz.net/forum-37-1.html" class="lightlink2" target="_blank">هاكات ديسكاز</a>'
 ));
 showtablefooter();

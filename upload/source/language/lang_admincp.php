@@ -7019,8 +7019,8 @@ $lang = array
 	'forums_edit_posts_noantitheft_comment' => 'بوضع نعم يتم إغلاق مضاد السرقة في هذا القسم وسيوفر أيضا قليلا من موارد الخادم',
 	'forums_edit_posts_noforumhidewater' => 'إغلاق خاصية إخفاء المواضيع الغير مهمة',
 	'forums_edit_posts_noforumhidewater_comment' => '',
-	'forums_edit_posts_noforumrecommend' => 'إغلاق الرد المنصوح به',
-	'forums_edit_posts_noforumrecommend_comment' => '',
+	'forums_edit_posts_noforumrecommend' => 'إغلاق خاصية المشاركة المستحسنة',
+	'forums_edit_posts_noforumrecommend_comment' => 'هذه الخاصية تضع الرد الأكثر تفاعلا بين الأعضاء في أول الموضوع , إختر نعم لإغلاق الخاصية',
 
 	'connect_menu_setting'			=> 'Basic Settings',//'基本设置',
 	'connect_menu_stat'			=> 'Statistics',//'数据统计',

@@ -13,16 +13,16 @@ a{ color:#2366A8; text-decoration:none; }
 	a img{ border:none; }
 em, cite, strong, th{ font-style:normal; font-weight:normal; }
 table{ border-collapse:collapse; }
-	th{ text-align:left; }
+	th{ text-align:right; }
 
 /* box */
-.container{ overflow:hidden; margin:0 auto; width:700px; height:auto !important;text-align:left; border:1px solid #B5CFD9; }
+.container{ overflow:hidden; margin:0 auto; width:700px; height:auto !important;text-align:right; border:1px solid #B5CFD9; }
 .header{ *overflow:hidden; height:194px; background:url(bg_repx.gif) repeat-x; }
-	.header h1{ text-indent:-9999px; width:270px; height:48px; background:url(bg_repno.gif) no-repeat 26px 22px; }
+	.header h1{ text-indent:-9999px; width:270px; height:48px; background:url(bg_repno.gif) no-repeat 26px 22px; direction:rtl; }
 	.header span { float: right; padding-right: 10px; }
-.main{ padding:20px 20px 0; background:#F7FBFE url(bg_repx.gif) repeat-x 0 -194px; }
+.main{ padding:20px 20px 0; background:#F7FBFE url(bg_repx.gif) repeat-x 0 -194px; direction:rtl; }
 	.main h3{ margin:10px auto; width:75%; color:#6CA1B4; font-weight:700; }
-.desc{ margin:0 auto; width:537px; line-height:180%; clear:both; }
+.desc{ margin:0 auto; width:537px; line-height:180%; clear:both;direction:rtl; }
 	.desc ul{ margin-left:20px; }
 .desc1{ margin:10px 0; width:100%; }
 	.desc1 ul{ margin-left:25px; }
@@ -45,7 +45,7 @@ table{ border-collapse:collapse; }
 .txt{ width:200px; }
 
 /* step num */
-.setup{ margin:46px 0 0 200px; padding-left:70px; }
+.setup{ margin:46px 0 0 200px; padding-right:70px; }
 	.setup h2{ padding-top:0; *padding-top:6px; line-height:1.2; color:#6CA1B4; font-size:36px; }
 	.setup p{ margin:0 0 10px 6px; color:#999; }
 .step1{ background:url(stepnum.gif) no-repeat 0 8px; }
@@ -83,4 +83,4 @@ table{ border-collapse:collapse; }
 	.license li{ line-height:150%; margin:5px 0; }
 .title{ margin:5px 0 -15px 60px; }
 
-#notice { overflow: hidden; margin: 20px; padding: 5px; height: 300px; border: 1px solid #B5CFD9; text-align: left; }
+#notice { overflow: hidden; margin: 20px; padding: 5px; height: 300px; border: 1px solid #B5CFD9; text-align: right; }
