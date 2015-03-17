@@ -69,7 +69,7 @@ INSERT INTO pre_common_cron VALUES ('19','1','system','حساب المشاركا
 INSERT INTO pre_common_cron VALUES ('20','1','system','تحديث آخر مشاركات المنتدى (حائط المشاركات)','cron_security_cleanup_lastpost.php','1269746623','1269792000','-1','-1','7','0');
 
 
-INSERT INTO pre_common_friendlink VALUES ('1','0','ديسكاز العرب','http://www.discuz.taxiweb.org','الدعم العربي لسكريبت ديسكاز','static/image/common/logo_88_31.gif','2');
+INSERT INTO pre_common_friendlink VALUES ('1','0','ديسكاز العرب','http://www.ar-discuz.net','الدعم العربي لسكريبت ديسكاز','static/image/common/logo_88_31.gif','2');
 
 
 
@@ -897,10 +897,10 @@ INSERT INTO pre_forum_medal VALUES ('3','وسام 3', '0','medal3.gif','0','0','
 INSERT INTO pre_forum_medal VALUES ('4','وسام 4', '0','medal4.gif','0','0','وسام للعضو جالب الأعضاء','0','','0','0');
 INSERT INTO pre_forum_medal VALUES ('5','وسام 5', '0','medal5.gif','0','0','وسام لأكثر الأعضاء زيارة للمنتدى','0','','0','0');
 INSERT INTO pre_forum_medal VALUES ('6','وسام 6', '0','medal6.gif','0','0','وسام لأكثر الأعضاء نشاطا','0','','0','0');
-INSERT INTO pre_forum_medal VALUES ('7','وسام 7', '0','medal7.gif','0','0','For Active Contributo','0','','0','0');
+INSERT INTO pre_forum_medal VALUES ('7','وسام 7', '0','medal7.gif','0','0','وسام العضو الشرفي','0','','0','0');
 INSERT INTO pre_forum_medal VALUES ('8','وسام 8', '0','medal8.gif','0','0','وسام للمشرف النشيط','0','','0','0');
-INSERT INTO pre_forum_medal VALUES ('9','وسام 9', '0','medal9.gif','0','0','For outstanding contributions to the forum moderation','0','','0','0');
-INSERT INTO pre_forum_medal VALUES ('10','وسام 10', '0','medal10.gif','0','0','For outstanding contributions to the forum','0','','0','0');
+INSERT INTO pre_forum_medal VALUES ('9','وسام 9', '0','medal9.gif','0','0','وسام لأفضل مشرف','0','','0','0');
+INSERT INTO pre_forum_medal VALUES ('10','وسام 10', '0','medal10.gif','0','0','وسام لأكثر الأعضاء مساعدة','0','','0','0');
 
 
 
