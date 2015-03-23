@@ -5,7 +5,7 @@ Offical Style for UCenter
 
 /* common */
 *{ word-wrap:break-word; outline:none; }
-body{ background:#FFF; text-align:center; }
+body{ background:#FFF; text-align:center; direction:rtl; }
 body, td, input, textarea, select, button{ color:#666; font:12px "Lucida Grande", Verdana, Lucida, Helvetica, Arial, 'Simsun', sans-serif; }
 body, ul, dl, dd, p, h1, h2, h3, h4, h5, h6, form, fieldset { margin:0; padding:0; }
 h1, h2, h3, h4, h5, h6{ font-size:12px; }
@@ -21,14 +21,14 @@ input.txt:hover, input.txt:focus, textarea:hover, textarea:focus{ border-color:#
 .radio{ margin-top:-1px; border:none; vertical-align:middle; }
 .checkbox{ height:14px; border:none; vertical-align:middle; }
 .btn{ margin:3px 0; padding:2px 5px; *padding:4px 5px 1px; border-color:#ddd #666 #666 #ddd; background:#DDD; color:#000; cursor:pointer; }
-.sgbtn{ margin-left:20px; padding:3px 7px; *padding:4px 7px 2px; border:1px solid #B5CFD9; background:#F2F9FD; color:#666; font-size:12px; font-weight:400; }
+.sgbtn{ margin-right:20px; padding:3px 7px; *padding:4px 7px 2px; border:1px solid #B5CFD9; background:#F2F9FD; color:#666; font-size:12px; font-weight:400; }
 	.sgbtn:hover{ text-decoration:none; }
-.bigarea{ margin-left:5px; width:230px; height:120px; }
+.bigarea{ margin-right:5px; width:230px; height:120px; }
 
 /* main header */
-.mainhd{ text-align:left; height:69px; line-height:69px; background:url(bg_repx.gif) repeat-x; }
-	.logo{ float:left; text-indent:-9999px; width:321px; height:46px; background:url(bg_repno.gif) no-repeat 29px 20px; }
-	.uinfo{ float:right; display:inline; margin-right:40px; }
+.mainhd{ text-align:right; height:69px; line-height:69px; background:url(bg_repx.gif) repeat-x; }
+	.logo{ float:right; text-indent:-9999px; width:321px; height:46px; background:url(bg_repno.gif) no-repeat 29px 20px; margin-right:40px; }
+	.uinfo{ float:left; display:inline; margin-left:40px; }
 		.uinfo a{ color:#666; }
 		.uinfo em{ margin-right:5px; font-weight:700; }
 		.uinfo p{ float:left; }
@@ -38,7 +38,7 @@ input.txt:hover, input.txt:focus, textarea:hover, textarea:focus{ border-color:#
 
 
 /* menu */
-.togglemenu{ position:absolute; z-index:1000; width:149px; *width:151px; text-align:left; border:1px solid #B5CFD9; border-top:none; background:#FFF; opacity:0.8; filter:Alpha(opacity=80); }
+.togglemenu{ position:absolute; z-index:1000; width:149px; *width:151px; text-align:right; border:1px solid #B5CFD9; border-top:none; background:#FFF; opacity:0.8; filter:Alpha(opacity=80); }
 	.togglemenu ul{ list-style:none; margin:0 2px 2px; padding:10px 0; background:url(bg_repx_hd.gif) repeat-x; }
 	.togglemenu a{ display:block; padding:5px 15px; color:#666; text-decoration:underline; }
 		.togglemenu a:hover{ color:#09C; }
@@ -47,27 +47,27 @@ input.txt:hover, input.txt:focus, textarea:hover, textarea:focus{ border-color:#
 #header_menu { text-align: right; padding-right: 20px; cursor:pointer; }
 
 /* box */
-.container{ padding:20px; text-align:left; }
+.container{ padding:20px; text-align:right; }
 .note{ margin:5px 0; padding:10px; width:580px; border:1px solid #B5CFD9; background:#F5F9FD; }
-	.i{ padding-left:22px; line-height:19px; background:url(bg_repno.gif) no-repeat -275px -100px; }
+	.i{ padding-right:22px; line-height:19px; background:url(bg_repno.gif) no-repeat -275px -100px; }
 		.i a{ text-decoration:underline; }
 		.i a:hover{ text-decoration:none; }
 .mainbox{ margin:10px 0; }
 .opt{ clear:both; overflow:hidden; }
-	.opt th{ padding:5px 0; font-weight:700; text-align:left; }
+	.opt th{ padding:5px 0; font-weight:700; text-align:right; }
 	.opt td{ padding-bottom:10px; }
-	.opt .txt, .opt textarea{ vertical-align:middle; margin-right:10px; width:250px; }
-	.opt select{ vertical-align:middle; margin-right:10px; }
+	.opt .txt, .opt textarea{ vertical-align:middle; margin-left:10px; width:250px; }
+	.opt select{ vertical-align:middle; margin-left:10px; }
 	.opt .area{ height:80px; }
 	.opt .bigarea { width: 500px; height: 80px; }
-	.opt label{ margin-right:20px; }
+	.opt label{ margin-left:20px; }
 	.opt p{ float:left; line-height:180%; }
 	.correct td{ color:#090; }
-	.correct .txt{ padding-right:20px; width:160px; background:url(bg_repno.gif) no-repeat 165px -198px; }
+	.correct .txt{ padding-left:20px; width:160px; background:url(bg_repno.gif) no-repeat 165px -198px; }
 	.error td{ color:#F60; }
-	.error .txt{ padding-right:20px; width:160px; background:url(bg_repno.gif) no-repeat 167px -346px; }
+	.error .txt{ padding-left:20px; width:160px; background:url(bg_repno.gif) no-repeat 167px -346px; }
 .datalist{ clear:both; width:100%; border-top:2px solid #B5CFD9; border-bottom:2px solid #B5CFD9; }
-	.datalist th{ line-height:250%; text-align:left; background:url(bg_repx.gif) repeat-x 0 bottom; color:#9EBECB; font-size:12px; }
+	.datalist th{ line-height:250%; text-align:right; background:url(bg_repx.gif) repeat-x 0 bottom; color:#9EBECB; font-size:12px; }
 	.datalist td{ padding:5px 0; background:url(bg_repx.gif) repeat-x 0 bottom; }
 	.currenttr td{ background:#F2F9FD url(bg_repx.gif) repeat-x 0 bottom; }
 	.datalist a{ text-decoration:underline; }
@@ -83,15 +83,15 @@ input.txt:hover, input.txt:focus, textarea:hover, textarea:focus{ border-color:#
 	.ip{ width:15%; }
 .fixwidth{ width: 100%; }
 	.fixwidthdec{ width:580px; }
-#loginform{ overflow:hidden; margin:90px auto; *padding-top:90px; width:590px;}
-.login{ float:left; margin-top:5px; text-align:right; font:bold 14px Tahoma, 'Simsun', Sans-serif; direction:rtl; }
+#loginform{ overflow:hidden; margin:90px auto; *padding-top:90px; width:590px;direction:rtl;}
+.login{ float:right; margin-top:5px; margin-right:5px; text-align:right; font:bold 14px Tahoma, 'Simsun', Sans-serif; direction:rtl; }
 	.login p{ margin:10px 5px; }
-	.loginbtn{ padding-left:53px; text-align:left; }
+	.loginbtn{ padding-left:53px; text-align:right; }
 	.login .txt{ width:160px; }
-	.login .seccode { margin-right:5px; width:85px; }
+	.login .seccode { margin-left:5px; width:85px; }
 	.checkcode{ margin-top:-3px; *margin-top:-6px; width:70px; height:21px; cursor:pointer; vertical-align:middle; }
-	.rstpsw { margin-left:10px; font-size:12px; font-weight:400; }
-.loginbox{ padding-right:40px; width:290px; height:120px; line-height:150%; background:url(bg_login.gif) no-repeat right 50%; }
+	.rstpsw { margin-right:10px; font-size:12px; font-weight:400; }
+.loginbox{ padding-left:40px; width:290px; height:120px; line-height:150%; background:url(bg_login.gif) no-repeat left 50%; }
 	.loginbox h1{ text-indent:-9999px; margin:10px 0 10px; height:25px; background:url(bg_repno.gif) no-repeat 0 -750px; }
 .ajax{ width:360px; border:1px solid #89B3C2; }
 	.ajaxbg{ margin:2px; padding:15px; background:url(bg_repx_hc.gif) repeat-x; }
@@ -117,9 +117,9 @@ input.txt:hover, input.txt:focus, textarea:hover, textarea:focus{ border-color:#
 /* tabmenu */
 .hastabmenu{ position:relative; height:90px; width: 580px; }
 	.tabmenu{ position:absolute; z-index:80; list-style:none; }
-		.tabmenu li{ float:left; margin-right:5px; }
+		.tabmenu li{ float:right; margin-right:5px; }
 		.tabmenu li a, .tabmenu .tabcurrent a{ display:block; padding: 0 7px; height: 21px; line-height: 21px; border:1px solid #CCC; border-bottom:1px solid #B5CFD9; color:#666; }
-		* html .tabmenu li a { float: left; height: 20px; line-height: 20px; }
+		* html .tabmenu li a { float: right; height: 20px; line-height: 20px; }
 		*+html .tabmenu li a { height: 20px; line-height: 20px; }
 		.tabmenu li a:hover{ text-decoration:none; }
 		.tabmenu .tabcurrent a{ border:1px solid #B5CFD9; border-bottom:1px solid #F2F9FD; background:#F2F9FD; }
@@ -147,10 +147,10 @@ h3{ font-size:14px; }
 
 /* list */
 .dblist{ list-style:none; margin-top:5px; }
-	.dblist li{ float:left; margin:0 0 0 -3px; *margin:0 0 5px -3px; width:25%; height:auto; *height:16px; }
+	.dblist li{ float:right; margin:0 0 0 -3px; *margin:0 0 5px -3px; width:25%; height:auto; *height:16px; }
 .memlist{ list-style:none; margin:7px 0 25px; padding-top:2px; border-top:2px solid #B5CFD9; }
 	.memlist li{ clear:both; overflow:hidden; zoom:1; padding:5px 0; *padding:1px 0 5px; line-height:150%; background:url(bg_repx.gif) repeat-x 0 bottom; }
-		.memlist em{ float:left; width:120px; }
+		.memlist em{ float:right; width:120px; }
 			.memlist .memcont{ width:480px; }
 .tiplist{ float:right; list-style:none; width:320px; }
 	.tiplist li{ line-height:160%; }

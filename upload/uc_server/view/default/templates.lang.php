@@ -495,7 +495,7 @@ $languages = array(
 	'admin_admin'			=> 'المدير',
 	'admin_return_admin_ls'		=> 'رجوع الى قائمة المدراء',
 	'admin_return_user_ls'		=> 'رجوع الى قائمة الاعضاء',
-	'view_new_version'		=> 'عرض اخر الاصدارات العربية',
+	'view_new_version'		=> 'عرض آخر الإصدارات',
 
  	'app_allowips'		=> 'الاي بي مسموح للوصول',//خالد
  	'app_allowips_comment'	=> 'اتركه فارغا في حال مشترك. إذا قمت بتعيين هذا, ستكون جميع عناوين IP الآخرين لا يمكنهم الوصول إلى هذا التطبيق',//vot
