@@ -5,16 +5,17 @@
 	This is NOT a freeware, use is subject to license terms
 
 	$Id: admin.php 1139 2012-05-08 09:02:11Z liulanbo $
+	Modified by Valery Votintsev, codersclub.org
 */
 
 error_reporting(0);
-set_magic_quotes_runtime(0);
+/*vot*/ ini_set('magic_quotes_runtime', 0); //DEPRECATED in php5.3: set_magic_quotes_runtime(0);
 
 $mtime = explode(' ', microtime());
 $starttime = $mtime[1] + $mtime[0];
 
 define('IN_UC', TRUE);
-define('UC_ROOT', substr(__FILE__, 0, -9));
+/*vot*/ define('UC_ROOT', str_replace('\\','/',substr(__FILE__, 0, -9)));
 define('UC_API', strtolower((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ? 'https' : 'http').'://'.$_SERVER['HTTP_HOST'].substr($_SERVER['PHP_SELF'], 0, strrpos($_SERVER['PHP_SELF'], '/'))));
 define('UC_DATADIR', UC_ROOT.'data/');
 define('UC_DATAURL', UC_API.'/data');

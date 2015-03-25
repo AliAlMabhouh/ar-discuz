@@ -1,4 +1,4 @@
-//	English by Valery Votintsev at sources.ru
+//	Modified by Valery Votintsev, Arabic By Ar-Discuz.Net
 var controlid = null;
 var currdate = null;
 var startdate = null;

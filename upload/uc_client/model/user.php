@@ -5,6 +5,8 @@
 	This is NOT a freeware, use is subject to license terms
 
 	$Id: user.php 1179 2014-11-03 07:11:25Z hypowang $
+
+	Modified by Valery Votintsev at sources.ru
 */
 
 !defined('IN_UC') && exit('Access Denied');
@@ -43,11 +45,11 @@ class usermodel {
 		$len = $this->dstrlen($username);
 /*vot*/		$lenbyte = strlen($username);
 /*vot*/		if($len > 30 || $len < 2) {
-			return FALSE;
+/*vot*/			return FALSE;
 /*vot*/		} elseif($lenbyte > 64) {
-			return FALSE;
+/*vot*/			return FALSE;
 /*vot*/		} elseif(preg_match("/[\t\%,\*\"\<\>\&]|\s{2}|^c:\\con\\con/is", $username)) {
-			return FALSE;
+/*vot*/			return FALSE;
 /*vot*/		} elseif(preg_match("/$guestexp/is", $username)) {
 			return FALSE;
 		} else {
@@ -98,7 +100,7 @@ class usermodel {
 	}
 
 	function check_emailformat($email) {
-		return strlen($email) > 6 && strlen($email) <= 32 && preg_match("/^([a-z0-9\-_.+]+)@([a-z0-9\-]+[.][a-z0-9\-.]+)$/", $email);
+/*vot*/		return strlen($email) > 6 && preg_match("/^([a-z0-9\-_.+]+)@([a-z0-9\-]+[.][a-z0-9\-.]+)$/", $email);
 	}
 
 	function check_emailaccess($email) {

@@ -5,6 +5,7 @@
 	This is NOT a freeware, use is subject to license terms
 
 	$Id: base.php 1167 2014-11-03 03:06:21Z hypowang $
+	Modified by Valery Votintsev, codersclub.org
 */
 
 !defined('IN_UC') && exit('Access Denied');
@@ -92,7 +93,7 @@ class base {
 		if(!$this->settings) {
 			$this->settings = $this->cache('settings');
 		}
-		$format[] = $type & 2 ? (!empty($this->settings['dateformat']) ? $this->settings['dateformat'] : 'Y-n-j') : '';
+/*vot*/		$format[] = $type & 2 ? (!empty($this->settings['dateformat']) ? $this->settings['dateformat'] : 'Y-m-d') : '';
 		$format[] = $type & 1 ? (!empty($this->settings['timeformat']) ? $this->settings['timeformat'] : 'H:i') : '';
 		return gmdate(implode(' ', $format), $time + $this->settings['timeoffset']);
 	}

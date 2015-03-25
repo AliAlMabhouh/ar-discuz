@@ -5,6 +5,7 @@
 	This is NOT a freeware, use is subject to license terms
 
 	$Id: admin.php 1167 2014-11-03 03:06:21Z hypowang $
+	Modified by Valery Votintsev, codersclub.org
 */
 
 !defined('IN_UC') && exit('Access Denied');
@@ -20,6 +21,7 @@ class adminbase extends base {
 	function adminbase() {
 		parent::__construct();
 		$this->cookie_status = 0;
+/*vot*/		$this->cookie_status = isset($_COOKIE['sid']) ? 1 : 0;
 		$sid = $this->cookie_status ? getgpc('sid', 'C') : rawurlencode(getgpc('sid', 'R'));
 		$this->sid = $this->view->sid = $this->sid_decode($sid) ? $sid : '';
 		$this->view->assign('sid', $this->view->sid);
@@ -55,6 +57,16 @@ class adminbase extends base {
 				$this->view->sid = $this->sid_encode($this->user['username']);
 				$this->setcookie('sid', $this->view->sid, 86400);
 			}
+/*vot*/ 		if(!isset($this->user['allowadminapp'])) {$this->user['allowadminapp'] = 0;}
+/*vot*/ 		if(!isset($this->user['allowadminuser'])) {$this->user['allowadminuser'] = 0;}
+/*vot*/ 		if(!isset($this->user['allowadminpm'])) {$this->user['allowadminpm'] = 0;}
+/*vot*/ 		if(!isset($this->user['allowadminnote'])) {$this->user['allowadminnote'] = 0;}
+/*vot*/ 		if(!isset($this->user['allowadminsetting'])) {$this->user['allowadminsetting'] = 0;}
+/*vot*/ 		if(!isset($this->user['allowadmincredits'])) {$this->user['allowadmincredits'] = 0;}
+/*vot*/ 		if(!isset($this->user['allowadminbadword'])) {$this->user['allowadminbadword'] = 0;}
+/*vot*/ 		if(!isset($this->user['allowadmindomain'])) {$this->user['allowadmindomain'] = 0;}
+/*vot*/ 		if(!isset($this->user['allowadmincache'])) {$this->user['allowadmincache'] = 0;}
+/*vot*/ 		if(!isset($this->user['allowadmindb'])) {$this->user['allowadmindb'] = 0;}
 			$this->view->assign('user', $this->user);
 		}
 	}

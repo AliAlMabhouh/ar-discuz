@@ -5,6 +5,7 @@
 	This is NOT a freeware, use is subject to license terms
 
 	$Id: user.php 1174 2014-11-03 04:38:12Z hypowang $
+	Modified by Valery Votintsev at sources.ru
 */
 
 !defined('IN_UC') && exit('Access Denied');
@@ -172,6 +173,10 @@ class usercontrol extends base {
 		$username = $this->input('username');
 		if(!$this->input('isuid')) {
 			$status = $_ENV['user']->get_user_by_username($username);
+/*vot*/		} elseif($this->input('isuid') == 1) {
+/*vot*/			$status = $_ENV['user']->get_user_by_uid($username);
+/*vot*/		} elseif($this->input('isuid') == 2) {
+/*vot*/			$status = $_ENV['user']->get_user_by_email($username);
 		} else {
 			$status = $_ENV['user']->get_user_by_uid($username);
 		}

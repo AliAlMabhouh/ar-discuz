@@ -1,3 +1,4 @@
+//	Modified by Valery Votintsev, codersclub.org
 var Ajaxs = new Array();
 function Ajax(waitId) {
 	var aj = new Object();
@@ -131,6 +132,7 @@ function appendscript(src, text, reload) {
 	$('append').appendChild(scriptNode);
 }
 
+//vot: Get a fixed length hash value, depends on the stringxor()
 function hash(string, length) {
 	var length = length ? length : 32;
 	var start = 0;
@@ -175,7 +177,7 @@ function newfunc(func){
 function ajaxmenu(url, position) {
 	e = is_ie ? event : ajaxmenu.caller.arguments[0];
 	controlid = is_ie ? e.srcElement : e.target;
-	var menuid = hash(url);
+/*vot*/	var menuid = hash(url);// So that each url corresponds to a pop-up layer, to avoid duplication of requests
 	createmenu(menuid);
 
 	showmenu2(e, menuid, position, controlid);
