@@ -347,33 +347,13 @@ class discuz_application extends discuz_base{
 		}
 	}
 
-	private function _xss_check() {
-
-		static $check = array('"', '>', '<', '\'', '(', ')', 'CONTENT-TRANSFER-ENCODING');
-
-		if(isset($_GET['formhash']) && $_GET['formhash'] !== formhash()) {
-			system_error('request_tainting');
-		}
-
-		if($_SERVER['REQUEST_METHOD'] == 'GET' ) {
-			$temp = $_SERVER['REQUEST_URI'];
-		} elseif(empty ($_GET['formhash'])) {
-			$temp = $_SERVER['REQUEST_URI'].file_get_contents('php://input');
-		} else {
-			$temp = '';
-		}
-
-		if(!empty($temp)) {
-			$temp = strtoupper(urldecode(urldecode($temp)));
-			foreach ($check as $str) {
-				if(strpos($temp, $str) !== false) {
-					system_error('request_tainting');
-				}
-			}
-		}
-
-		return true;
-	}
+private function _xss_check() {
+                $temp = strtoupper(urldecode(urldecode($_SERVER['REQUEST_URI'])));
+                if(strpos($temp, '<') !== false || strpos($temp, '"') !== false || strpos($temp, 'CONTENT-TRANSFER-ENCODING') !== false) {
+                        system_error('request_tainting');
+                }
+                return true;
+        }
 
 	private function _get_client_ip() {
 		$ip = $_SERVER['REMOTE_ADDR'];

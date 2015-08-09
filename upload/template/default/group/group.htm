@@ -110,7 +110,7 @@
 				<div class="tb cl{if $action != 'manage'} mbm{/if}">
 					<!--{if in_array($_G['adminid'], array(1,2))}--><span class="a bw0_all y xi2"><a href="javascript:;" onclick="showWindow('grecommend$_G[fid]', 'forum.php?mod=group&action=recommend&fid=$_G[fid]');return false;">{lang group_push_to_forum}</a></span><!--{/if}-->
 					<ul id="groupnav">
-						<li {if $action == 'index'}class="a"{/if}><a href="forum.php?mod=group&fid=$_G[fid]#groupnav" title="">{lang home}</a></li>
+						<li {if $action == 'index'}class="a"{/if}><a href="forum.php?mod=group&fid=$_G[fid]#groupnav" title="">{lang home}&nbsp;</a></li>
 						<li {if $action == 'list'}class="a"{/if}><a href="forum.php?mod=forumdisplay&action=list&fid=$_G[fid]#groupnav" title="">{lang group_discuss_area}</a></li>
 						<li {if $action == 'memberlist' || $action == 'invite'}class="a"{/if}><a href="forum.php?mod=group&action=memberlist&fid=$_G[fid]#groupnav" title="">{lang group_member_list}</a></li>
 						<!--{if $_G['forum']['ismoderator']}--><li {if $action == 'manage'}class="a"{/if}><a href="forum.php?mod=group&action=manage&fid=$_G[fid]#groupnav">{lang group_admin}</a></li><!--{/if}-->

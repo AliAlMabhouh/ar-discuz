@@ -940,7 +940,7 @@ Last Modify:	lushnis
 
 /* Text list */
 .xl li { margin: 2px 0; }
-.xl em { float: left; padding-right: 5px; }
+.xl em { float: left; padding-left: 30px; }
 .xl em, .xl em a { color: {LIGHTTEXT}; }
 .xl label, .xl label a { color: #C00; }
 .xl1 li { height: 1.5em; overflow: hidden; }
@@ -1123,7 +1123,7 @@ Last Modify:	lushnis
 .prompt_news { background-image: url({IMGDIR}/new_pm.gif); }
 .prompt_follower { background-position: 0 -191px; }
 .prompt_concern { background-position: 0 -258px; }
-.ignore_notice { background: url({IMGDIR}/close.gif) no-repeat 0 0; position:absolute; left:0; top:0; width:12px; height:12px; overflow:hidden; }
+.ignore_notice { margin: 0 5px 0 0; background: url({IMGDIR}/close.gif) no-repeat 0 0; position:absolute; left:0; top:0; width:12px; height:12px; overflow:hidden; }
 .p_pop .ignore_noticeli a,.p_pop .ignore_noticeli a:hover,.p_pop .ignore_noticeli a.a { background:none; border-bottom:0; }
 .p_pop .notice_interactive, .p_pop .notice_system, .p_pop .notice_manage, .p_pop .notice_app, .p_pop .notice_mypost { margin: 3px 2px 5px 0;}
 

@@ -318,7 +318,7 @@ li.popupmenu_popup { list-style: none; }
 .partition, .partition2{ line-height:21px; font-weight:700; color:#09C; }
 .tb2 .partition{ padding:5px; background:url(bg_repx_hc.gif) repeat-x 0 -40px; text-align: right;}
 .dblist{}
-		.dblist li{ float:left; margin-bottom:5px; width:auto; height:20px; white-space:nowrap; cursor:pointer; }
+		.dblist li{ float:right; margin-bottom:5px; width:auto; height:20px; white-space:nowrap; cursor:pointer; }
 
 .cfolder, .ofolder{ display:block; padding-left:50px; line-height:30px; background:url(bg_repno.gif) no-repeat -260px -50px; font-weight:700; }
 .ofolder{ background:url(bg_repno.gif) no-repeat -260px -100px; }

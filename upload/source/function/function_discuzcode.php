@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: function_discuzcode.php 34308 2014-01-20 09:45:13Z hypowang $
+ *      $Id: function_discuzcode.php 35219 2015-02-27 08:05:27Z nemohou $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -223,7 +223,8 @@ function discuzcode($message, $smileyoff, $bbcodeoff, $htmlon = 0, $allowsmilies
 				if($authorreplyexist === null) {
 					if(!$_G['forum']['ismoderator']) {
 						if($_G['uid']) {
-							$authorreplyexist = C::t('forum_post')->fetch_pid_by_tid_authorid($_G['tid'], $_G['uid']);
+							$_post = C::t('forum_post')->fetch('tid:'.$_G['tid'], $pid);
+							$authorreplyexist = $_post['tid'] == $_G['tid'] ? C::t('forum_post')->fetch_pid_by_tid_authorid($_G['tid'], $_G['uid']) : FALSE;
 						}
 					} else {
 						$authorreplyexist = TRUE;
@@ -553,6 +554,18 @@ function parseflv($url, $width = 0, $height = 0) {
 		if(preg_match("/http:\/\/www.youtube.com\/watch\?v=([^\/&]+)&?/i", $url, $matches)) {
 			$flv = 'http://www.youtube.com/v/'.$matches[1].'&hl=ar_SA&fs=1';
 			$iframe = 'http://www.youtube.com/embed/'.$matches[1];
+			if(!$width && !$height) {
+				$str = file_get_contents($url, false, $ctx);
+				if(!empty($str) && preg_match("/'VIDEO_HQ_THUMB':\s'(.+?)'/i", $str, $image)) {
+					$url = substr($image[1], 0, strrpos($image[1], '/')+1);
+					$filename = substr($image[1], strrpos($image[1], '/')+3);
+					$imgurl = $url.$filename;
+				}
+			}
+		}
+		elseif(preg_match("/https:\/\/www.youtube.com\/watch\?v=([^\/&]+)&?/i", $url, $matches)) {
+			$flv = 'https://www.youtube.com/v/'.$matches[1].'&hl=ar_SA&fs=1';
+			$iframe = 'https://www.youtube.com/embed/'.$matches[1];
 			if(!$width && !$height) {
 				$str = file_get_contents($url, false, $ctx);
 				if(!empty($str) && preg_match("/'VIDEO_HQ_THUMB':\s'(.+?)'/i", $str, $image)) {

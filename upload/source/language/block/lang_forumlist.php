@@ -26,5 +26,6 @@ $lang = array
 	'forumlist_orderby_threads'	=> 'المواضيع',//'按主题数倒序排序',
 	'forumlist_orderby_todayposts'	=> 'مشاركات اليوم',//'按今日发贴数倒序排序',
 	'forumlist_orderby_posts'	=> 'المشاركات',//'按帖子数倒序排序',
+	'forumlist_fids'	=> 'أرقام الأقسام',	
 );
 

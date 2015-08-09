@@ -324,7 +324,7 @@ $lang = array
 	'patch_dateline' => 'التاريخ',
 	'patch_status' => 'الحالة',
 	'patch_close' => 'اغلاق',
-		'plugin_title' => 'تطبيق تحديث التذكير',
+		'plugin_title' => 'إشعار بوجود تحديثات',
 	'plugin_memo' => 'أنت تملك <span class="xi1">{number}</span> تطبيق يمكن أن يتم تحديثه',
 	'plugin_link' => 'تحديث الآن',
 

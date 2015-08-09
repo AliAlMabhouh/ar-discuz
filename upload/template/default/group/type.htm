@@ -28,7 +28,7 @@
 				<div class="tbmu cl bw0">
 					<span class="y">
 					<select title="{lang orderby}" onchange="location.href=this.value" class="ps">
-						<option value="$url" $selectorder[default]>{lang orderby_default}</option>
+						<option value="$url" $selectorder[default]>{lang orderby_default}&nbsp;&nbsp;&nbsp;</option>
 						<option value="$url&orderby=thread" $selectorder[thread]>{lang stats_main_threads_count}</option>
 						<option value="$url&orderby=membernum" $selectorder[membernum]>{lang group_member_count}</option>
 						<option value="$url&orderby=dateline" $selectorder[dateline]>{lang group_create_time}</option>
@@ -134,7 +134,7 @@
 				<div class="bm_c">
 					<ol class="xl">
 						<!--{loop $topgrouplist $fid $group}-->
-						<li class="top1"><span class="y xi2 xg1"> $group[commoncredits]</span><a href="forum.php?mod=group&fid=$group[fid]" title="$group[name]">$group[name]</a></li>
+						<li class="top1"><span class="z xi2 xg1">$group[commoncredits]&nbsp;</span><a href="forum.php?mod=group&fid=$group[fid]" title="$group[name]">$group[name]</a></li>
 						<!--{/loop}-->
 					</ol>
 				</div>
