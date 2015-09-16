@@ -760,7 +760,7 @@ function dgmdate($timestamp, $format = 'dt', $timeoffset = '9999', $uformat = ''
 			} elseif($days == 1) {
 				$return = $lang['byday'].'&nbsp;'.gmdate($tformat, $timestamp);
 			} else {
-				$return = ($days + 1).'&nbsp;'.$lang['day'].$lang['before'];
+				$return = $lang['before'].($days + 1).'&nbsp;'.$lang['day']; //Edited by Ar-Discuz.Net
 			}
 			if(!defined('IN_MOBILE')) {
 				$return = '<span title="'.$s.'">'.$return.'</span>';
