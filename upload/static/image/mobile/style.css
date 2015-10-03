@@ -108,7 +108,7 @@ a.orange:link,a.orange:visited,a.orange:hover{color:#F60;text-decoration:none }
 .sub_forum li { direction: rtl; height:38px; line-height:38px; border-bottom:1px solid #EDEDED; font-size:16px; overflow:hidden; }
 .sub_forum li:last-child { border-bottom:none;}
 .sub_forum li a { display: block; padding:0 10px; }
-.sub_forum li .num {direction: rtl; background:#35A3E6; color:#FFF; float: right; font-size: 14px; height.bm_h .o img: 25px; line-height: 25px; margin-top: 7px; padding: 0 10px;border-radius:10px; }
+.sub_forum li .num {direction: rtl; background:#35A3E6; color:#FFF; float: left; font-size: 14px; height.bm_h .o img: 25px; line-height: 25px; margin-top: 7px; padding: 0 10px;border-radius:10px; }
 
 /*-- threadlist --*/
 .threadlist { direction: rtl; padding:0 0px}
