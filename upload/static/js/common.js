@@ -205,29 +205,22 @@ function getcookie(name, nounescape) {
 }
 
 function Ajax(recvType, waitId) {
-
 	var aj = new Object();
-
 	aj.loading = 'يرجى الإنتظار...';
 	aj.recvType = recvType ? recvType : 'XML';
 	aj.waitId = waitId ? $(waitId) : null;
-
 	aj.resultHandle = null;
 	aj.sendString = '';
 	aj.targetUrl = '';
-
 	aj.setLoading = function(loading) {
 		if(typeof loading !== 'undefined' && loading !== null) aj.loading = loading;
 	};
-
 	aj.setRecvType = function(recvtype) {
 		aj.recvType = recvtype;
 	};
-
 	aj.setWaitId = function(waitid) {
 		aj.waitId = typeof waitid == 'object' ? waitid : $(waitid);
 	};
-
 	aj.createXMLHttpRequest = function() {
 		var request = false;
 		if(window.XMLHttpRequest) {
@@ -248,7 +241,6 @@ function Ajax(recvType, waitId) {
 		}
 		return request;
 	};
-
 	aj.XMLHttpRequest = aj.createXMLHttpRequest();
 	aj.showLoading = function() {
 		if(aj.waitId && (aj.XMLHttpRequest.readyState != 4 || aj.XMLHttpRequest.status != 200)) {
@@ -256,7 +248,6 @@ function Ajax(recvType, waitId) {
 			aj.waitId.innerHTML = '<span><img src="' + IMGDIR + '/loading.gif" class="vm"> ' + aj.loading + '</span>';
 		}
 	};
-
 	aj.processHandle = function() {
 		if(aj.XMLHttpRequest.readyState == 4 && aj.XMLHttpRequest.status == 200) {
 			if(aj.waitId) {
@@ -281,7 +272,6 @@ function Ajax(recvType, waitId) {
 			}
 		}
 	};
-
 	aj.get = function(targetUrl, resultHandle) {
 		targetUrl = hostconvert(targetUrl);
 		setTimeout(function(){aj.showLoading()}, 250);
@@ -485,7 +475,6 @@ function appendscript(src, text, reload, charset) {
 	} catch(e) {}
 }
 
-
 function hash(string, length) {
 	var length = length ? length : 32;
 	var start = 0;
@@ -512,6 +501,7 @@ function stringxor(s1, s2) {
 	}
 	return s;
 }
+
 function ajaxupdateevents(obj, tagName) {
 	$F('_ajaxupdateevents', arguments, 'ajax');
 }
@@ -548,7 +538,6 @@ function showloading(display, waiting) {
 	var waiting = waiting ? waiting : 'يرجى الإنتظار...';
 	$('ajaxwaitid').innerHTML = waiting;
 	$('ajaxwaitid').style.display = display;
-
 }
 
 function doane(event, preventDefault, stopPropagation) {
@@ -581,7 +570,7 @@ function doane(event, preventDefault, stopPropagation) {
 function loadcss(cssname) {
 	if(!CSSLOADED[cssname]) {
 		var csspath = (typeof CSSPATH == 'undefined' ? 'data/cache/style_' : CSSPATH);
-	    if(!$('css_' + cssname)) {
+		if(!$('css_' + cssname)) {
 			css = document.createElement('link');
 			css.id = 'css_' + cssname,
 			css.type = 'text/css';
@@ -618,7 +607,7 @@ function showMenu(v) {
 	var zindex = isUndefined(v['zindex']) ? JSMENU['zIndex']['menu'] : v['zindex'];
 	var ctrlclass = isUndefined(v['ctrlclass']) ? '' : v['ctrlclass'];
 	var winhandlekey = isUndefined(v['win']) ? '' : v['win'];
-		if(winhandlekey && ctrlObj && !ctrlObj.getAttribute('fwin')) {
+	if(winhandlekey && ctrlObj && !ctrlObj.getAttribute('fwin')) {
 		ctrlObj.setAttribute('fwin', winhandlekey);
 	}
 	zindex = cover ? zindex + 500 : zindex;
@@ -1939,6 +1928,7 @@ function checkBlind() {
 		}
 	}
 }
+
 function getElementOffset(element) {
 	var left = element.offsetLeft, top = element.offsetTop;
 	while(element = element.offsetParent) {

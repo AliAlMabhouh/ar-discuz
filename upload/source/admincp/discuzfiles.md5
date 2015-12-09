@@ -3514,6 +3514,7 @@ d41d8cd98f00b204e9800998ecf8427e *data/log/index.htm
 d41d8cd98f00b204e9800998ecf8427e *data/plugindata/index.htm
 d41d8cd98f00b204e9800998ecf8427e *data/template/index.htm
 d41d8cd98f00b204e9800998ecf8427e *data/threadcache/index.htm
+df036147160ef073af74dc43ef913091 *data/ipdata/GeoIP.dat
 0a7896849dd83bbf64a31ccf11e58a17 *source/admincp/admincp_admingroup.php
 8896d084661345e3de22cb445536f2cb *source/admincp/admincp_adv.php
 b3d8f1df09c1490a9859d83c2d2385be *source/admincp/admincp_album.php

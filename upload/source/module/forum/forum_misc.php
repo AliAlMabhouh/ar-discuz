@@ -607,7 +607,7 @@ if($_GET['action'] == 'votepoll' && submitcheck('pollsubmit', 1)) {
 
 	$_GET['tid'] = dintval($_GET['tid']);
 	$_GET['pid'] = dintval($_GET['pid']);
-	
+
 	if($_GET['showratetip']) {
 		include template('forum/rate');
 		exit();

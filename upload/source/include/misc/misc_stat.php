@@ -58,7 +58,6 @@ if(!empty($_GET['xml'])) {
 		if (!array_diff($_GET['types'], array_merge($cols['login'], $cols['forum'], $cols['tgroup'], $cols['home'], $cols['space']))) {
 			$field = 'daytime,`' . implode('`+`', $_GET['types']) . '` AS statistic';
 		}
-		
 		$type = 'statistic';
 	}
 	foreach(C::t('common_stat')->fetch_all($begin, $end, $field) as $value) {

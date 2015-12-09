@@ -239,7 +239,7 @@ class uc_note {
 			foreach($post as $k => $v) {
 				if(substr($v['findpattern'], 0, 1) != '/' || substr($v['findpattern'], -3) != '/is') {
 					$v['findpattern'] = '/' . preg_quote($v['findpattern'], '/') . '/is';
-				}					
+				}
 				$data['findpattern'][$k] = $v['findpattern'];
 				$data['replace'][$k] = $v['replacement'];
 			}

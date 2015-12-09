@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: wechat.inc.php 34572 2014-06-03 08:18:44Z nemohou $
+ *      $Id: wechat.inc.php 35228 2015-03-05 06:53:53Z nemohou $
  */
 if (!defined('IN_DISCUZ')) {
 	exit('Access Denied');
@@ -16,6 +16,7 @@ define('IN_WECHAT', strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') !== fa
 require_once DISCUZ_ROOT . './source/plugin/wechat/wechat.lib.class.php';
 require_once DISCUZ_ROOT . './source/plugin/wechat/wechat.class.php';
 require_once DISCUZ_ROOT . './source/plugin/wechat/wsq.class.php';
+require_once DISCUZ_ROOT . './source/discuz_version.php';
 
 list($openid, $sid) = explode("\t", authcode(base64_decode($_GET['key']), 'DECODE', $_G['config']['security']['authkey']));
 $keyenc = urlencode($_GET['key']);
@@ -150,10 +151,15 @@ if($ac == 'bind' && $_G['wechat']['setting']['wechat_qrtype']) {
 if($ac == 'bind') {
 	define('IN_MOBILE', 2);
 
+	if($_G['wechat']['setting']['wechat_qrtype'] && $_GET['referer']) {
+		$_GET['referer'] = str_replace('&state=siteregister', '&state=backlogin', $_GET['referer']);
+		dheader('location: '.$_GET['referer']);
+	}
+
 	if($_G['wechat']['setting']['wechat_mtype'] == 2) {
 		$defaultusername = WeChat::getnewname($openid);
 	} else {
-		$defaultusername = $_G['wechat']['setting']['wechat_qrtype'] ? $_GET['username'] : $_G['wechat']['setting']['wechat_user'].random(5);
+		$defaultusername = $_G['wechat']['setting']['wechat_qrtype'] ? $_GET['username'] : 'wx_'.random(5);
 	}
 	$defaultusername = htmlspecialchars($defaultusername);
 
@@ -182,6 +188,9 @@ if($ac == 'bind') {
 		showmessage('profile_passwd_illegal');
 	}
 
+	if(DISCUZ_VERSION < 'X3.0') {
+		$_GET['username'] = WeChatEmoji::clear($_GET['username']);
+	}
 	$result = userlogin($_GET['username'], $_GET['password'], $_GET['questionid'], $_GET['answer'], $_G['setting']['autoidselect'] ? 'auto' : $_GET['loginfield'], $_G['clientip']);
 
 	if($result['status'] <= 0) {
@@ -213,16 +222,40 @@ if($ac == 'bind') {
 	if($wechatuser) {
 		showmessage('wechat:wechat_openid_exists');
 	} else {
+		if($_G['wechat']['setting']['wechat_qrtype']) {
+			$mpmember = C::t('#wechat#common_member_wechatmp')->fetch_by_openid($wxopenid ? $wxopenid : $_GET['wxopenid']);
+			$mpmembers = C::t('common_member')->fetch_all(array_keys($mpmember));
+			if ($mpmembers) {
+				$memberfirst = array_shift($mpmembers);
+				$member = getuserbyuid($memberfirst['uid'], 1);
+				if($member) {
+					setloginstatus($member, 1296000);
+					$url = wsq::wxuserregisterUrl($memberfirst['uid']);
+					if ($ac == 'wxregister') {
+						dheader('location: ' . $url);
+					} else {
+						showmessage('wechat:wechat_member_register_succeed', $url);
+					}
+				}
+			}
+		}
 
+		if(DISCUZ_VERSION < 'X3.0' && $_G['inajax']) {
+			$_GET['username'] = WeChatEmoji::clear($_GET['username']);
+		}
 		if($ac == 'wxregister') {
 			loaducenter();
 			$user = uc_get_user($_GET['username']);
 			if(!empty($user)) {
-				$_GET['username'] = substr($_GET['username'], 0, 9).'_'.random(5);
+				$_GET['username'] = cutstr($_GET['username'], 7, '').'_'.random(5);
 			}
 		}
 
-		$uid = WeChat::register($_GET['username']);
+		$uid = WeChat::register($_GET['username'], $ac == 'wxregister');
+
+		if($uid && $_GET['avatar']) {
+			WeChat::syncAvatar($uid, $_GET['avatar']);
+		}
 
 		if(!$_G['wechat']['setting']['wechat_qrtype']) {
 			WeChatHook::bindOpenId($uid, $openid, 1);
@@ -239,17 +272,26 @@ if($ac == 'bind') {
 			}
 		}
 	}
-} elseif($ac == 'logout' && $_GET['hash'] == formhash()) {
-	wechat_setloginstatus($_G['uid'], false);
-	clearcookies();
-	dheader('location: '.$selfurl.'bind');
-} elseif($ac == 'unbind' && $_GET['hash'] == formhash()) {
-	if($wechatuser) {
-		C::t('#wechat#common_member_wechat')->delete($wechatuser['uid']);
-		wsq::report('unbind');
+} elseif($ac == 'logout') {
+	if($_GET['hash'] == formhash()) {
+		wechat_setloginstatus($_G['uid'], false);
+		clearcookies();
 	}
-	clearcookies();
-	dheader('location: '.$selfurl.'bind');
+	mobile_core::result(array());
+} elseif($ac == 'unbind') {
+	if($_GET['hash'] == formhash()) {
+		if($wechatuser) {
+			C::t('#wechat#common_member_wechat')->delete($wechatuser['uid']);
+			wsq::report('unbind');
+		}
+		clearcookies();
+	}
+	mobile_core::result(array());
+} elseif($ac == 'unbindmp') {
+	if($_G['wechat']['setting']['wechat_qrtype'] && $_GET['hash'] == formhash()) {
+		C::t('#wechat#common_member_wechatmp')->delete($_GET['uid']);
+	}
+	mobile_core::result(array());
 } else {
 	showmessage('undefined_action');
 }

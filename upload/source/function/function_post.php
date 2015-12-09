@@ -590,7 +590,7 @@ function messagecutstr($str, $length = 0, $dot = ' ...') {
 			'',
 			'',
 			'',
-			'%u'
+		        '%u'
 		), $str));
 	if($length) {
 		$str = cutstr($str, $length, $dot);

@@ -62,7 +62,7 @@ if(submitcheck('lostpwsubmit')) {
 			'uid' => $member['uid'],
 			'idstring' => $idstring,
 			'clientip' => $_G['clientip'],
-			'sign' => make_getpws_sign($member['uid'], $idstring),			
+			'sign' => make_getpws_sign($member['uid'], $idstring),
 		)
 	);
 	if(!sendmail("$_GET[username] <$tmp[email]>", $get_passwd_subject, $get_passwd_message)) {

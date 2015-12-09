@@ -475,7 +475,7 @@ function checkFocus() {
 	if(wysiwyg) {
 		if(BROWSER.rv) {
 			return;
-		}	
+		}
 		try {
 			editwin.focus();
 		} catch(e) {
@@ -700,8 +700,6 @@ function applyFormat(cmd, dialog, argument) {
 			break;
 	}
 }
-
-
 
 function isEmail(email) {
 	return email.length > 6 && /^[\w\-\.]+@[\w\-\.]+(\.\w+)+$/.test(email);
@@ -1174,7 +1172,6 @@ function showEditorMenu(tag, params) {
 	}
 	if($(ctrlid + '_submit')) $(ctrlid + '_submit').onclick = function() {
 		checkFocus();
-
 		switch(tag) {
 			case 'url':
 				var href = $(ctrlid + '_param_1').value;

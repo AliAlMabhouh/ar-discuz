@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: admincp_setting.php 34647 2014-06-17 04:09:50Z nemohou $
+ *      $Id: admincp_setting.php 35033 2014-10-23 10:16:00Z laoguozhang $
  */
 if(!defined('IN_DISCUZ') || !defined('IN_ADMINCP')) {
 	exit('Access Denied');

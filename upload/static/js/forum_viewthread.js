@@ -491,7 +491,7 @@ function lazyload(className) {
 				dom.innerHTML = '<div style="width: '+width+'px; height: '+height+'px;background: url('+IMGDIR + '/loading.gif) no-repeat center center;"></div>';
 				img.parentNode.insertBefore(dom.childNodes[0], img);
 				img.onload = function () {
-						if(!this.getAttribute('_load')) {
+					if(!this.getAttribute('_load')) {
 						this.setAttribute('_load', 1);
 						this.style.width = this.style.height = '';
 						this.parentNode.removeChild(this.previousSibling);

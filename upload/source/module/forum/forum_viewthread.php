@@ -4,7 +4,7 @@
  *      [Discuz!] (C)2001-2099 Comsenz Inc.
  *      This is NOT a freeware, use is subject to license terms
  *
- *      $Id: forum_viewthread.php 35233 2015-03-11 03:35:43Z nemohou $
+ *      $Id: forum_viewthread.php 35494 2015-08-06 09:31:59Z nemohou $
  */
 
 if(!defined('IN_DISCUZ')) {
@@ -18,6 +18,9 @@ require_once libfile('function/post');
 $thread = & $_G['forum_thread'];
 $forum = & $_G['forum'];
 
+if(!empty($_GET['checkrush']) && preg_match('/[^0-9_]/', $_GET['checkrush'])) {
+	$_GET['checkrush'] = '';
+}
 if(!$_G['forum_thread'] || !$_G['forum']) {
 	showmessage('thread_nonexistence');
 }
@@ -584,7 +587,7 @@ if(!$maxposition && empty($postarr)) {
 		if($post['tid'] != $_G['tid']) {
 			$post = array();
 		}
-		
+
 		if($post) {
 			if($visibleallflag || (!$visibleallflag && !$post['invisible'])) {
 				$postarr[0] = $post;

@@ -35,8 +35,7 @@ if(!$operation) {
 } elseif($operation == 'download') {
 	$step = intval($_GET['step']);
 	$addoni = intval($_GET['i']);
-	$uniqueid = $_G['setting']['siteuniqueid'] ? $_G['setting']['siteuniqueid'] : C::t('common_setting')->fetch('siteuniqueid');
-	if(!$_GET['md5hash'] || md5($_GET['addonids'].md5($uniqueid.$_GET['timestamp'])) != $_GET['md5hash']) {
+	if(!$_GET['md5hash'] || md5($_GET['addonids'].md5(cloudaddons_getuniqueid().$_GET['timestamp'])) != $_GET['md5hash']) {
 		cpmsg('cloudaddons_validator_error', '', 'error');
 	}
 	$addonids = explode(',', $_GET['addonids']);
