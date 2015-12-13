@@ -284,7 +284,7 @@ $lang = array (
 	'no_privilege_email'		=> 'لتفعيل البريد الاكتروني , <a href="home.php?mod=spacecp&ac=profile&op=password">إضغط هنا للتفعيل</a>',//'你需要验证激活自己的邮箱后才能进行本操作，<a href="home.php?mod=spacecp&ac=profile&op=password">点这里激活邮箱</a>',
 	'no_privilege_friendnum'	=> 'أنت تحتاج إلى إضافة  {friendnum} صديق  قم بإجراء هذه العملية , <a href="home.php?mod=spacecp&ac=friend&op=find">إضغط هنا لإضافة صديق</a>',//'你需要添加 {friendnum}个好友之后，才能进行本操作，<a href="home.php?mod=spacecp&ac=friend&op=find">点这里添加好友</a>',
 	'login_succeed'			=> 'السلام عليكم يا {username}. سيتم توجيهك للصفحة السابقة.',//'欢迎你回来，{username}。现在将转入登录前页面。 {ucsynlogin} ',
-	'logout_succeed'		=> 'تم تسجيل خروجك بنجاح , سيتم توجيهك إلى الصفحة السابقة كزائر . <br /><a href="member.php?mod=clearcookies&formhash={formhash}">[ حذف الملفات المؤقتة ]</a> {ucsynlogout} ',//'你已退出站点，现在将以游客身份转入退出前页面。 <br /><a href="member.php?mod=clearcookies&formhash={formhash}">[ 清除痕迹 ]</a> {ucsynlogout} ',
+	'logout_succeed'		=> 'تم تسجيل خروجك بنجاح , سيتم توجيهك إلى الصفحة السابقة كزائر ...... {ucsynlogout}',//'你已退出站点，现在将以游客身份转入退出前页面。 <br /><a href="member.php?mod=clearcookies&formhash={formhash}">[ 清除痕迹 ]</a> {ucsynlogout} ',
 	'location_logout_succeed_mobile' => 'تم تسجيل خروجك بنجاح , سيتم توجيهك إلى الصفحة السابقة كزائر<br /><a href="member.php?mod=clearcookies&formhash={formhash}">[ حذف الملفات المؤقتة ]</a>',
 	'forum_pay_incorrect' =>  'نأسف المنتدى يحتاج لدفع {paycredits} {credits} للدخول يمكنك {title}غير كافي',
     'forum_pay_correct' => 'تمت عملية الدفع بنجاح',
